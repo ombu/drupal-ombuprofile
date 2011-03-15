@@ -1,38 +1,16 @@
 <?php
-// $id$
 
-/**
- * Setup default theme settings.
- *
- * @param $install_state
- *   An array of information about the current installation state.
- */
-function ombubase_setup_themes($install_state) {
-  // Enable the default theme.
-  $default_theme = 'veritablevegetable';
-  db_update('system')
-    ->fields(array('status' => 1))
-    ->condition('type', 'theme')
-    ->condition('name', $default_theme)
-    ->execute();
-  variable_set('theme_default', $default_theme);
+function _profile_setup_themes() {
 
-  // Enable the admin theme.
-  $admin_theme = 'ombuadmin';
-  db_update('system')
-    ->fields(array('status' => 1))
-    ->condition('type', 'theme')
-    ->condition('name', $admin_theme)
-    ->execute();
-  variable_set('admin_theme', $admin_theme);
-  variable_set('node_admin_theme', '1');
+    // Site's main theme
+    install_default_theme('garland');
 
-  // Other theme vars
-  variable_set('default_logo', '0');
-  //variable_set('logo_path', 'sites/all/themes/bmx_base/css/img/logo.png');
-  //variable_set('site_frontpage', 'products');
-  //variable_set('theme_bmx_catalog_settings', array(
-      //'default_favicon' => false,
-      //'favicon_path' => false,
-  //));
+    // Admin theme
+    install_enable_theme('ombuadmin');
+    install_admin_theme('ombuadmin');
+
+    // Don't display date and author information for page nodes by default.
+    $theme_settings = variable_get('theme_settings', array());
+    $theme_settings['toggle_node_info_page'] = FALSE;
+    variable_set('theme_settings', $theme_settings);
 }

@@ -1,158 +1,66 @@
 <?php
-// $Id$
 
-/**
- * Setup site blocks.
- *
- * @param $install_state
- *   An array of information about the current installation state.
- */
-function ombubase_setup_blocks($install_state) {
-  // Enable some standard blocks.
-  $default_theme = variable_get('theme_default', 'veritablevegetable');
-  $admin_theme = variable_get('admin_theme', 'seven');
+function _profile_setup_blocks() {
 
-  // Since this task runs after modules have been enabled, all blocks will be
-  // setup to use the default theme.  So blocks in the default theme need to be
-  // updated, while blocks for the admin theme need to be inserted.
-  $default_blocks = array(
-    array(
-      'module' => 'system',
-      'delta' => 'main',
-      'theme' => $default_theme,
-      'status' => 1,
-      'weight' => 0,
-      'region' => 'content',
-      'pages' => '',
-      'cache' => -1,
-    ),
-    array(
-      'module' => 'system',
-      'delta' => 'help',
-      'theme' => $default_theme,
-      'status' => 1,
-      'weight' => 0,
-      'region' => 'help',
-      'pages' => '',
-      'cache' => -1,
-    ),
-    array(
-      'module' => 'ombubase',
-      'delta' => 'login',
-      'theme' => $default_theme,
-      'status' => 1,
-      'weight' => 1,
-      'region' => 'footer',
-      'pages' => '',
-    ),
-    array(
-      'module' => 'search',
-      'delta' => 'form',
-      'theme' => $default_theme,
-      'status' => 1,
-      'weight' => 2,
-      'region' => 'footer',
-      'pages' => '',
-      'title' => 'Search Site:',
-    ),
-  );
-  foreach ($default_blocks as $record) {
-    $query = db_update('block');
-    $query->fields($record);
-    $query->condition('module', $record['module']);
-    $query->condition('delta', $record['delta']);
-    $query->execute();
-  }
+    // this refreshed the blocks table for themes
+    install_init_blocks();
 
-  // New module blocks to insert.
-  $new_blocks = array(
-    array(
-      'module' => 'node',
-      'delta' => 'recent',
-      'theme' => $admin_theme,
-      'status' => 1,
-      'weight' => 10,
-      'region' => 'dashboard_main',
-      'pages' => '',
-      'cache' => -1,
-    ),
-    array(
-      'module' => 'system',
-      'delta' => 'main',
-      'theme' => $admin_theme,
-      'status' => 1,
-      'weight' => 0,
-      'region' => 'content',
-      'pages' => '',
-      'cache' => -1,
-    ),
-    array(
-      'module' => 'system',
-      'delta' => 'help',
-      'theme' => $admin_theme,
-      'status' => 1,
-      'weight' => 0,
-      'region' => 'help',
-      'pages' => '',
-      'cache' => -1,
-    ),
-    array(
-      'module' => 'user',
-      'delta' => 'login',
-      'theme' => $admin_theme,
-      'status' => 1,
-      'weight' => 10,
-      'region' => 'content',
-      'pages' => '',
-      'cache' => -1,
-    ),
-    array(
-      'module' => 'user',
-      'delta' => 'new',
-      'theme' => $admin_theme,
-      'status' => 1,
-      'weight' => 0,
-      'region' => 'dashboard_sidebar',
-      'pages' => '',
-      'cache' => -1,
-    ),
-    array(
-      'module' => 'search',
-      'delta' => 'form',
-      'theme' => $admin_theme,
-      'status' => 1,
-      'weight' => -10,
-      'region' => 'dashboard_sidebar',
-      'pages' => '',
-      'cache' => -1,
-    ),
-  );
-  $query = db_insert('block')->fields(array('module', 'delta', 'theme', 'status', 'weight', 'region', 'pages', 'cache'));
-  foreach ($new_blocks as $record) {
-    $query->values($record);
-  }
-  $query->execute();
-  
-  // Create new blocks
-  $delta = db_insert('block_custom')
-    ->fields(array(
-      'body' => 'Block Body',
-      'info' => 'Block Info',
-      'format' => 'php_code',
-    ))
-    ->execute();
-  $query = db_insert('block')
-    ->fields(array(
-      'visibility' => 0,
-      'pages' => '',
-      'title' => 'Block Title',
-      'module' => 'block',
-      'theme' => variable_get('theme_default', ''),
-      'status' => 0,
-      'weight' => 0,
-      'region' => -1,
-      'delta' => $delta,
-      'cache' => DRUPAL_NO_CACHE,
-    ))
-    ->execute();
+    // Blocks
+    $themes = array('theme_name');
+    $admin_themes = array('ombuadmin');
+    $blocks = array(
+
+        // Admin
+        array( // Devel Menu
+            'module' => 'menu',
+            'delta' => 'devel',
+            'region' => 'left',
+            'weight' => 1,
+            'visibility' => 0,
+            'pages' => NULL,
+            'themes' => $admin_themes,
+        ),
+        array( // Execute PHP
+            'module' => 'devel',
+            'delta' => '2',
+            'region' => 'left',
+            'weight' => 2,
+            'visibility' => 0,
+            'pages' => NULL,
+            'themes' => $admin_themes,
+        ),
+    );
+
+    foreach( $blocks as $b ) {
+        foreach( $b['themes'] as $theme ) {
+            $exists = db_result(db_query("SELECT bid FROM {blocks} WHERE module = '%s' AND delta = '%s' AND theme = '%s'", $b['module'], $b['delta'], $theme));
+            if ( is_numeric($exists) ) {
+                install_set_block($b['module'], $b['delta'], $theme, $b['region'], $b['weight'], $b['visibility'], $b['pages']);
+            } else {
+                install_add_block($b['module'], $b['delta'], $theme, 1, $b['weight'], $b['region'], $b['visibility'], $b['pages']);
+            }
+        }
+    }
+
+    // Disable these blocks
+    $blocks = array(
+        array(
+            'module' => 'user',
+            'delta' => 0,  // User Login block
+        ),
+        array(
+            'module' => 'user',
+            'delta' => 1,  // Default Navigation
+        ),
+        array(
+            'module' => 'system',
+            'delta' => 0,  // Powered by Drupal
+        ),
+    );
+    foreach( $blocks as $b ) {
+        foreach( array_merge($themes, $admin_themes) as $theme ) {
+            install_disable_block($b['module'], $b['delta'], $theme);
+        }
+    }
+
 }

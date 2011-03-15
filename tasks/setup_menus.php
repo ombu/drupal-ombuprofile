@@ -1,31 +1,30 @@
 <?php
-// $Id$
 
-/**
- * Setup site menus.
- *
- * @param $install_state
- *   An array of information about the current installation state.
- */
-function ombubase_setup_menus($install_state) {
-  // Create menus
-  $menus = array(
-    array(
-      'menu_name' => 'footer-menu',
-      'title' => st('Footer Menu'),
-      'description' => st('The footer menu displays links in the footer of the site.'),
-    ),
-  );
-  foreach ($menus as $menu) {
-    menu_save($menu);
-  }
+function _profile_setup_menus() {
 
-  // Update the menu router information.
-  menu_rebuild();
+    // Create Menu
+    $menu_name = install_menu_create_menu('Main Navigation', 'site-nav', 'The main navigation menu for the website');
 
-  variable_set('menu_main_links_source', 'main-menu');
-  variable_set('menu_secondary_links_source', 'footer-menu');
+    $menu = array(
+//         array(
+//             'path' => 'home',
+//             'title' => 'Home',
+//             'description' => 'Home',
+//             'menu' => $menu_name,
+//             'weight' => -49,
+//             'children' => array(
+//                 array(
+//                     'path' => 'node/2',
+//                     'title' => 'Nested menu item',
+//                     'description' => '',
+//                     'menu' => $menu_name,
+//                     'weight' => -50,
+//                 ),
+//             ),
+//         ),
+    );
 
-  // Additional menus setup in add_content.php to account for the menu structure 
-  // created by inserting nodes.
+    install_menu_create_menu_items($menu, 0);
+
+    menu_rebuild();
 }

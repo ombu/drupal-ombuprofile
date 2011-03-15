@@ -1,14 +1,7 @@
 <?php
-// $Id$
 
-/**
- * Setup XMLsitemap settings.
- *
- *
- * @param $install_state
- *   An array of information about the current installation state.
- */
-function ombubase_setup_xmlsitemap() {
+function _profile_setup_xmlsitemap() {
+
     $include = array(
         'status' => 1,
         'priority' => '0.5',

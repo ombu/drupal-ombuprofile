@@ -1,0 +1,7 @@
+This file is here so the node_export_data directory is tracked by Mercurial.
+
+Files added to this directory should be sequentially named as:
+
+    001-{name}.export.php
+    002-{name}.export.php
+    ...
