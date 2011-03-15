@@ -1,0 +1,38 @@
+; $Id$
+
+name = OmbuBase
+description = OmbuBase installation profile.
+version = VERSION
+core = 7.x
+
+; Core dependencies
+dependencies[] = block
+dependencies[] = contextual
+dependencies[] = dashboard
+dependencies[] = image
+dependencies[] = list
+dependencies[] = menu
+dependencies[] = number
+dependencies[] = options
+dependencies[] = path
+dependencies[] = taxonomy
+dependencies[] = dblog
+dependencies[] = search
+dependencies[] = toolbar
+dependencies[] = overlay
+dependencies[] = field_ui
+dependencies[] = file
+dependencies[] = rdf
+dependencies[] = php
+
+; Contrib dependencies
+dependencies[] = views
+dependencies[] = views_bulk_operations
+dependencies[] = wysiwyg
+dependencies[] = pathauto
+
+; Custom dependencies
+dependencies[] = ombucleanup
+dependencies[] = ombudashboard
+
+files[] = ombubase.profile
