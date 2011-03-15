@@ -50,7 +50,6 @@ function ombubase_setup_users($install_state) {
     'redirect from admin to dashboard',
     'configure ombu site',
     'edit supplementary content',
-    'administer menu',
     'access toolbar',
     'access content overview',
     'access content',
@@ -59,6 +58,9 @@ function ombubase_setup_users($install_state) {
     'access all views',
     'view the administration theme',
     'access overlay',
+    'access statistics',
+    'view post access',
+    'administer site configuration',
   );
   user_role_grant_permissions($admin_role->rid, $admin_permissions);
 
@@ -85,6 +87,8 @@ function ombubase_setup_users($install_state) {
     'edit supplementary content',
     'edit views basic settings',
     'administer nodes',
+    'create url aliases',
+    'administer menu',
     // Content specific permissions
     //'create page content', 'edit any page content', 'delete any page content',
     //'create grower content', 'edit any grower content', 'delete any grower content',
