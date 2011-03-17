@@ -5,56 +5,56 @@
 /**
  * Implements hook_install_tasks().
  */
-function ombubase_install_tasks() {
+function ombuprofile_install_tasks() {
   return array(
     'setup_themes' => array(
       'display_name' => st('Setup Themes'),
-      'function' => 'ombubase_install_task_router',
+      'function' => 'ombuprofile_install_task_router',
     ),
     'setup_content_types' => array(
       'display_name' => st('Setup Content Types'),
-      'function' => 'ombubase_install_task_router',
+      'function' => 'ombuprofile_install_task_router',
     ),
     'setup_vars' => array(
       'display_name' => st('Setup Site Variables'),
-      'function' => 'ombubase_install_task_router',
+      'function' => 'ombuprofile_install_task_router',
     ),
     'setup_taxonomy' => array(
       'display_name' => st('Setup Taxonomy'),
-      'function' => 'ombubase_install_task_router',
+      'function' => 'ombuprofile_install_task_router',
     ),
     'setup_menus' => array(
       'display_name' => st('Setup Menus'),
-      'function' => 'ombubase_install_task_router',
+      'function' => 'ombuprofile_install_task_router',
     ),
     'setup_blocks' => array(
       'display_name' => st('Setup Blocks'),
-      'function' => 'ombubase_install_task_router',
+      'function' => 'ombuprofile_install_task_router',
     ),
     'setup_input_formats' => array(
       'display_name' => st('Setup Input Formats'),
-      'function' => 'ombubase_install_task_router',
+      'function' => 'ombuprofile_install_task_router',
     ),
     'setup_users' => array(
       'display_name' => st('Setup Roles & Users'),
-      'function' => 'ombubase_install_task_router',
+      'function' => 'ombuprofile_install_task_router',
     ),
     'add_files' => array(
       'display_name' => st('Add Files'),
-      'function' => 'ombubase_install_task_router',
+      'function' => 'ombuprofile_install_task_router',
     ),
     'add_content' => array(
       'display_name' => st('Add Content'),
-      'function' => 'ombubase_install_task_router',
+      'function' => 'ombuprofile_install_task_router',
     ),
     'post_setup' => array(
       'display_name' => st('Post Setup'),
-      'function' => 'ombubase_install_task_router',
+      'function' => 'ombuprofile_install_task_router',
     ),
     /*
       'setup_xmlsitemap' => array(
       'display_name' => st('Setup XML Sitemap'),
-      'function' => 'ombubase_install_task_router',
+      'function' => 'ombuprofile_install_task_router',
       ),
      */
   );
@@ -66,11 +66,11 @@ function ombubase_install_tasks() {
  * @param $install_state
  *   An array of information about the current installation state.
  */
-function ombubase_install_task_router($install_state) {
-  $path = drupal_get_path('module', 'ombubase');
+function ombuprofile_install_task_router($install_state) {
+  $path = drupal_get_path('module', 'ombuprofile');
 
   $task = $install_state['active_task'];
-  $task_function = 'ombubase_' . $task;
+  $task_function = 'ombuprofile_' . $task;
 
   if (!function_exists($task_function) && file_exists($path . '/tasks/' . $task . '.php')) {
     require($path . '/tasks/' . $task . '.php');
@@ -86,7 +86,7 @@ function ombubase_install_task_router($install_state) {
 /**
  * Implementation of hook_image_default_styles().
  */
-function ombubase_image_default_styles() {
+function ombuprofile_image_default_styles() {
   $styles = array();
 
   /*
@@ -107,7 +107,7 @@ function ombubase_image_default_styles() {
 /**
  * Implements hook_block_info().
  */
-function ombubase_block_info() {
+function ombuprofile_block_info() {
   // Define site specific blocks here.
   $blocks = array();
   return $blocks;
@@ -116,7 +116,7 @@ function ombubase_block_info() {
 /**
  * Implements hook_block_view().
  */
-function ombubase_block_view($delta = '') {
+function ombuprofile_block_view($delta = '') {
   $block = array();
   return $block;
 }

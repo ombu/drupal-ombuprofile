@@ -1,7 +1,7 @@
 ; $Id$
 
-name = OmbuBase
-description = OmbuBase installation profile.
+name = OmbuProfile
+description = OmbuProfile installation profile.
 version = VERSION
 core = 7.x
 
@@ -35,4 +35,4 @@ dependencies[] = pathauto
 dependencies[] = ombucleanup
 dependencies[] = ombudashboard
 
-files[] = ombubase.profile
+files[] = ombuprofile.profile

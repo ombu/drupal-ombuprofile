@@ -9,7 +9,7 @@
  * @param $install_state
  *   An array of information about the current installation state.
  */
-function ombubase_setup_vars($install_state) {
+function ombuprofile_setup_vars($install_state) {
   // @todo: Import vars from below
   //variable_set('site_slogan', 'Advancing Diagnostics to Improve Public Health');
   variable_set('menu_secondary_links_source', 'header-links');

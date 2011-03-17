@@ -4,5 +4,5 @@
 /**
  * Implements hook_install().
  */
-function ombubase_install() {
+function ombuprofile_install() {
 }

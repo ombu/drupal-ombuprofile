@@ -7,7 +7,7 @@
  * @param $install_state
  *   An array of information about the current installation state.
  */
-function ombubase_setup_blocks($install_state) {
+function ombuprofile_setup_blocks($install_state) {
   // Enable some standard blocks.
   $default_theme = variable_get('theme_default', 'veritablevegetable');
   $admin_theme = variable_get('admin_theme', 'seven');
@@ -37,7 +37,7 @@ function ombubase_setup_blocks($install_state) {
       'cache' => -1,
     ),
     array(
-      'module' => 'ombubase',
+      'module' => 'ombuprofile',
       'delta' => 'login',
       'theme' => $default_theme,
       'status' => 1,

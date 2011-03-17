@@ -7,7 +7,7 @@
  * @param $install_state
  *   An array of information about the current installation state.
  */
-function ombubase_add_files($install_state) {
+function ombuprofile_add_files($install_state) {
   // @todo: need to change this to use D7 api.
   $path = 'sites/default/files/';
 

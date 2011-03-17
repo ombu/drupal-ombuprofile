@@ -8,5 +8,5 @@
  * @param $install_state
  *   An array of information about the current installation state.
  */
-function ombubase_post_setup($install_state) {
+function ombuprofile_post_setup($install_state) {
 }

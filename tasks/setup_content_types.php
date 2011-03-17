@@ -9,7 +9,7 @@
  * @param $install_state
  *   An array of information about the current installation state.
  */
-function ombubase_setup_content_types($install_state) {
+function ombuprofile_setup_content_types($install_state) {
   // Default "Basic page" and "Products" to not be promoted and have comments disabled.
   variable_set('node_options_page', array('status'));
   variable_set('comment_page', COMMENT_NODE_HIDDEN);

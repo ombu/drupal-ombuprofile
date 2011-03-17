@@ -7,7 +7,7 @@
  * @param $install_state
  *   An array of information about the current installation state.
  */
-function ombubase_setup_themes($install_state) {
+function ombuprofile_setup_themes($install_state) {
   // Enable the default theme.
   $default_theme = 'veritablevegetable';
   db_update('system')

@@ -7,7 +7,7 @@
  * @param $install_state
  *   An array of information about the current installation state.
  */
-function ombubase_setup_users($install_state) {
+function ombuprofile_setup_users($install_state) {
 
   /**
    * User settings (admin/config/people/accounts)

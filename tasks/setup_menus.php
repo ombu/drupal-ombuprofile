@@ -7,7 +7,7 @@
  * @param $install_state
  *   An array of information about the current installation state.
  */
-function ombubase_setup_menus($install_state) {
+function ombuprofile_setup_menus($install_state) {
   // Create menus
   $menus = array(
     array(

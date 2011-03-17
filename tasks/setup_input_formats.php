@@ -8,7 +8,7 @@
  * @param $install_state
  *   An array of information about the current installation state.
  */
-function ombubase_setup_input_formats($install_state) {
+function ombuprofile_setup_input_formats($install_state) {
   // Add text formats.
   $ombu_format = array(
     'format' => 'ombu_input',
