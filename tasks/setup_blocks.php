@@ -9,7 +9,7 @@
  */
 function ombuprofile_setup_blocks($install_state) {
   // Enable some standard blocks.
-  $default_theme = variable_get('theme_default', 'veritablevegetable');
+  $default_theme = variable_get('theme_default', OMBUBASE_DEFAULT_THEME);
   $admin_theme = variable_get('admin_theme', 'seven');
 
   // Since this task runs after modules have been enabled, all blocks will be

@@ -9,7 +9,7 @@
  */
 function ombuprofile_setup_themes($install_state) {
   // Enable the default theme.
-  $default_theme = 'veritablevegetable';
+  $default_theme = OMBUBASE_DEFAULT_THEME;
   db_update('system')
     ->fields(array('status' => 1))
     ->condition('type', 'theme')

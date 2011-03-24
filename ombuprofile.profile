@@ -1,6 +1,7 @@
 <?php
 
-// $Id$
+// Main theme for site.
+define('OMBUBASE_DEFAULT_THEME', 'default_theme');
 
 /**
  * Implements hook_install_tasks().
