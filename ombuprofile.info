@@ -29,6 +29,7 @@ dependencies[] = statistics
 ; Contrib dependencies
 dependencies[] = views
 dependencies[] = views_bulk_operations
+dependencies[] = views_ui_basic
 dependencies[] = wysiwyg
 dependencies[] = pathauto
 
