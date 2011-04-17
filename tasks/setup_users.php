@@ -59,7 +59,7 @@ function ombuprofile_setup_users($install_state) {
     'view the administration theme',
     'access overlay',
     'access statistics',
-    'view post access',
+    'view post access counter',
     'administer site configuration',
   );
   user_role_grant_permissions($admin_role->rid, $admin_permissions);
