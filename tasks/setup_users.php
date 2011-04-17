@@ -77,7 +77,6 @@ function ombuprofile_setup_users($install_state) {
   $editor_permissions = array(
     $ombu_input_permission,
     'access content overview',
-    'administer taxonomy',
     'access contextual links',
     'access toolbar',
     'view the administration theme',
@@ -89,10 +88,12 @@ function ombuprofile_setup_users($install_state) {
     'administer nodes',
     'create url aliases',
     'administer menu',
+
     // Content specific permissions
     //'create page content', 'edit any page content', 'delete any page content',
-    //'create grower content', 'edit any grower content', 'delete any grower content',
-    //'create produce content', 'edit any produce content', 'delete any produce content',
+
+    // Taxonomy specific permissions
+    // 'edit terms in 1', 'delete terms in 1',
   );
   user_role_grant_permissions($editor_role->rid, $editor_permissions);
 

@@ -24,6 +24,7 @@ dependencies[] = field_ui
 dependencies[] = file
 dependencies[] = rdf
 dependencies[] = php
+dependencies[] = statistics
 
 ; Contrib dependencies
 dependencies[] = views
