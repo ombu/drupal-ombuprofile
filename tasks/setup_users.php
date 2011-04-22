@@ -61,6 +61,7 @@ function ombuprofile_setup_users($install_state) {
     'access statistics',
     'view post access counter',
     'administer site configuration',
+    'use tinymce html button',
   );
   user_role_grant_permissions($admin_role->rid, $admin_permissions);
 
