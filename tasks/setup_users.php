@@ -55,6 +55,7 @@ function ombuprofile_setup_users($install_state) {
     'access content',
     'view own unpublished content',
     'administer users',
+    'access user profiles',
     'access all views',
     'view the administration theme',
     'access overlay',
