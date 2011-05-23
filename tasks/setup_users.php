@@ -45,7 +45,6 @@ function ombuprofile_setup_users($install_state) {
   $admin_permissions = array(
     $ombu_input_permission,
     'administer blocks',
-    'access contextual links',
     'access dashboard',
     'redirect from admin to dashboard',
     'configure ombu site',
