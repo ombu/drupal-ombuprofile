@@ -1,7 +1,7 @@
 <?php
 
 // Main theme for site.
-define('OMBUBASE_DEFAULT_THEME', 'default_theme');
+define('OMBUBASE_DEFAULT_THEME', 'bartik');
 
 /**
  * Implements hook_install_tasks().
