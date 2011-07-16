@@ -38,8 +38,6 @@ dependencies[] = ombucleanup
 dependencies[] = ombudashboard
 
 ; Features
-dependencies[] = pacsun
-dependencies[] = contest
-dependencies[] = design
+;dependencies[] = feature_base
 
 files[] = ombuprofile.profile
