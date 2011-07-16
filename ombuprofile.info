@@ -27,6 +27,7 @@ dependencies[] = statistics
 
 ; Contrib dependencies
 dependencies[] = views
+dependencies[] = views_ui
 dependencies[] = views_bulk_operations
 dependencies[] = views_ui_basic
 dependencies[] = wysiwyg
@@ -35,5 +36,10 @@ dependencies[] = pathauto
 ; Custom dependencies
 dependencies[] = ombucleanup
 dependencies[] = ombudashboard
+
+; Features
+dependencies[] = pacsun
+dependencies[] = contest
+dependencies[] = design
 
 files[] = ombuprofile.profile
