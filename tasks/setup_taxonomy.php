@@ -8,6 +8,9 @@
  *   An array of information about the current installation state.
  */
 function ombuprofile_setup_taxonomy($install_state) {
+  // Disable by default, since there aren't any vocabularies yet
+  return;
+
   // Vocabulary creation handled by features.
   $vocab = taxonomy_vocabulary_machine_name_load('department');
 
