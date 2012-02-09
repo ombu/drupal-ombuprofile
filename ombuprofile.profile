@@ -85,6 +85,22 @@ function ombuprofile_install_task_router($install_state) {
 }
 
 /**
+ * Implements hook_menu().
+ */
+function ombuprofile_menu() {
+  $items = array();
+
+  $items['ombuprofile_404'] = array(
+    'title' => t('Page not found'),
+    'access callback' => TRUE,
+    'page callback' => 'ombuprofile_404_page',
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+}
+
+/**
  * Implementation of hook_image_default_styles().
  */
 function ombuprofile_image_default_styles() {
@@ -120,4 +136,12 @@ function ombuprofile_block_info() {
 function ombuprofile_block_view($delta = '') {
   $block = array();
   return $block;
+}
+
+/**
+ * 404 page callback.
+ */
+function ombuprofile_404_page() {
+  drupal_set_title(t('Page not found'));
+  return t('The requested page could not be found.');
 }

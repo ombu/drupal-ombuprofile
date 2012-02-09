@@ -18,6 +18,9 @@ function ombuprofile_setup_vars($install_state) {
   variable_set('site_default_country', 'US');
   variable_set('date_first_day', 1);
 
+  // 404 settings
+  variable_set('site_404', 'ombuprofile_404');
+
   // Date & Time settings
   variable_set('date_default_timezone_name', 'America/New_York');
   variable_set('configurable_timezones', 0);
