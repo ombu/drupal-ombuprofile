@@ -39,6 +39,9 @@ function ombuprofile_setup_vars($install_state) {
     'title' => 'title',
   ));
 
+  // OmbuSEO settings
+  variable_set('ombuseo_node_page', 1);
+
   _profile_setup_vars_pathauto();
 }
 

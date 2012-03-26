@@ -36,6 +36,7 @@ dependencies[] = pathauto
 ; Custom dependencies
 dependencies[] = ombucleanup
 dependencies[] = ombudashboard
+dependencies[] = ombuseo
 
 ; Features
 ;dependencies[] = feature_base
