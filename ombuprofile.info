@@ -32,6 +32,7 @@ dependencies[] = views_bulk_operations
 dependencies[] = views_ui_basic
 dependencies[] = wysiwyg
 dependencies[] = pathauto
+dependencies[] = context
 
 ; Custom dependencies
 dependencies[] = ombucleanup
