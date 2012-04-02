@@ -15,22 +15,34 @@ function ombuprofile_setup_input_formats($install_state) {
     'name' => 'OMBU Input',
     'weight' => 0,
     'filters' => array(
-      // URL filter.
-      'filter_url' => array(
-        'weight' => 0,
-        'status' => 1,
-      ),
       // HTML filter.
       'filter_html' => array(
-        'weight' => 1,
+        'weight' => 0,
         'status' => 1,
         'settings' => array(
           'allowed_html' => '<a><u><em><strong><ul><ol><li><span><img><h2><h3><h4><h5><h6><dl><dt><dd><br><hr><p><blockquote>',
         )
       ),
+      // Video filter (must be before the url filter and after the html filter.
+      'video_filter' => array(
+        'weight' => 1,
+        'status' => 1,
+        'settings' => array(
+          'video_filter_width' => '566',
+          'video_filter_height' => '400',
+          'video_filter_autoplay' => '0',
+          'video_filter_related' => '0',
+          'video_filter_html5' => '1',
+        ),
+      ),
+      // URL filter.
+      'filter_url' => array(
+        'weight' => 2,
+        'status' => 1,
+      ),
       // Line break filter.
       'filter_autop' => array(
-        'weight' => 2,
+        'weight' => 3,
         'status' => 1,
       ),
       // HTML corrector filter.
