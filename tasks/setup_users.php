@@ -30,12 +30,12 @@ function ombuprofile_setup_users($install_state) {
   /**
    * User roles and permissions.
    */
-  $ombu_input_permission = filter_permission_name(filter_format_load('ombu_input'));
-  $comment_input_permission = filter_permission_name(filter_format_load('comment'));
+  $default_format_permission = filter_permission_name(filter_format_load('default'));
+  $comment_format_permission = filter_permission_name(filter_format_load('comment'));
 
   // Enable default permissions for system roles.
-  user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, array($comment_input_permission, 'access content', 'view the administration theme', 'search content' /*, 'access comments'*/));
-  user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array($comment_input_permission, 'access content' /*, 'access comments', 'post comments', 'skip comment approval'*/));
+  user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, array($comment_format_permission, 'access content', 'view the administration theme', 'search content' /*, 'access comments'*/));
+  user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array($comment_format_permission, 'access content' /*, 'access comments', 'post comments', 'skip comment approval'*/));
 
   // Create a default role for site administrators, with all available permissions assigned.
   $admin_role = new stdClass();
@@ -45,8 +45,8 @@ function ombuprofile_setup_users($install_state) {
   // Set this as the administrator role.
 
   $admin_permissions = array(
-    $ombu_input_permission,
-    $comment_input_permission,
+    $default_format_permission,
+    $comment_format_permission,
     'administer blocks',
     'access dashboard',
     'redirect from admin to dashboard',
@@ -79,8 +79,8 @@ function ombuprofile_setup_users($install_state) {
   $editor_role->weight = 3;
   user_role_save($editor_role);
   $editor_permissions = array(
-    $ombu_input_permission,
-    $comment_input_permission,
+    $default_format_permission,
+    $comment_format_permission,
     'access content overview',
     'access contextual links',
     'show dashboard toolbar',

@@ -77,9 +77,9 @@ function _ombuprofile_build_structured_menu_nodes($nodes, $menu_name, $parent = 
       $node = _ombuprofile_setup_new_node();
       $node->title = $title;
       $node->body[$node->language][0]['value'] = _ombuprofile_lorem();
-      $node->body[$node->language][0]['format'] = 'ombu_input';
+      $node->body[$node->language][0]['format'] = 'default';
       $node->field_secondary_content[$node->language][0]['value'] = '<h2>Subheadline</h2>' . _ombuprofile_lorem() . '<a href="#" class="more-link">read more</a>';
-      $node->field_secondary_content[$node->language][0]['format'] = 'ombu_input';
+      $node->field_secondary_content[$node->language][0]['format'] = 'default';
       $node->menu = array(
         'menu_name' => $menu_name,
         'enabled' => TRUE,
