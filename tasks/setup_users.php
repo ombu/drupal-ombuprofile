@@ -9,6 +9,11 @@
  */
 function ombuprofile_setup_users($install_state) {
 
+  // Reset Bean caches so the correct perms are available
+  bean_reset();
+  drupal_static_reset('bean_get_types');
+
+
   /**
    * User settings (admin/config/people/accounts)
    */
