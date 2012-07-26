@@ -8,7 +8,6 @@ core = 7.x
 ; Core dependencies
 dependencies[] = block
 dependencies[] = contextual
-dependencies[] = dashboard
 dependencies[] = image
 dependencies[] = list
 dependencies[] = menu
