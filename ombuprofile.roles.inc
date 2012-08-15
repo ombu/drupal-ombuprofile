@@ -1,25 +1,22 @@
 <?php
 
  $roles_perms = array (
-  'anonymous user' => 
+  'anonymous user' =>
   array (
     0 => 'access content',
     1 => 'search content',
     2 => 'use text format comment',
-    7 => 'view media',
   ),
-  'authenticated user' => 
+  'authenticated user' =>
   array (
     0 => 'access content',
     1 => 'use text format comment',
-    6 => 'view media',
   ),
-  'admin' => 
+  'admin' =>
   array (
     0 => 'access all views',
     1 => 'access content',
     2 => 'access content overview',
-    3 => 'access dashboard',
     4 => 'access overlay',
     5 => 'access statistics',
     6 => 'access the dashboard page',
@@ -51,11 +48,10 @@
     37 => 'view revisions',
     38 => 'view the administration theme',
   ),
-  'editor' => 
+  'editor' =>
   array (
     0 => 'access content overview',
     1 => 'access contextual links',
-    2 => 'access dashboard',
     3 => 'access overlay',
     4 => 'access the dashboard page',
     5 => 'administer menu',
@@ -69,7 +65,6 @@
     17 => 'edit any page content',
     19 => 'edit own page content',
     20 => 'edit supplementary content',
-    21 => 'edit views basic settings',
     22 => 'redirect from admin to dashboard',
     23 => 'revert revisions',
     24 => 'show dashboard toolbar',
