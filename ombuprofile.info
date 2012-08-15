@@ -29,7 +29,6 @@ dependencies[] = video_filter
 dependencies[] = views
 dependencies[] = views_ui
 dependencies[] = views_bulk_operations
-dependencies[] = views_ui_basic
 dependencies[] = wysiwyg
 dependencies[] = pathauto
 dependencies[] = context
