@@ -25,14 +25,12 @@ dependencies[] = php
 dependencies[] = statistics
 
 ; Contrib dependencies
-dependencies[] = video_filter
 dependencies[] = views
 dependencies[] = views_ui
 dependencies[] = views_bulk_operations
 dependencies[] = wysiwyg
 dependencies[] = pathauto
 dependencies[] = context
-dependencies[] = media
 
 ; Custom dependencies
 dependencies[] = ombucleanup
