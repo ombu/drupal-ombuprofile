@@ -10,8 +10,10 @@
 function ombuprofile_setup_users($install_state) {
 
   // Reset Bean caches so the correct perms are available
-  bean_reset();
-  drupal_static_reset('bean_get_types');
+  if (function_exists('bean_reset')) {
+    bean_reset();
+    drupal_static_reset('bean_get_types');
+  }
 
 
   /**
@@ -63,7 +65,7 @@ function ombuprofile_setup_users($install_state) {
 /**
  * User roles and permissions.
  *
- * Load the roles & permissions from the ombuprofile.roles.inc file generated 
+ * Load the roles & permissions from the ombuprofile.roles.inc file generated
  * by the `$ drush dump-roles-perms` command exposed by the base module
  */
 function ombuprofile_load_roles_and_perms_from_dump() {
