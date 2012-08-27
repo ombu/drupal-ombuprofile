@@ -31,6 +31,10 @@ dependencies[] = views_bulk_operations
 dependencies[] = wysiwyg
 dependencies[] = pathauto
 dependencies[] = context
+dependencies[] = media
+dependencies[] = oembedcore
+dependencies[] = media_internet
+dependencies[] = media_oembed
 
 ; Custom dependencies
 dependencies[] = ombucleanup

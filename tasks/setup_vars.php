@@ -43,6 +43,21 @@ function ombuprofile_setup_vars($install_state) {
   variable_set('ombuseo_node_page', 1);
 
   _profile_setup_vars_pathauto();
+
+  // oEmbed / media settings.
+  $variables['default_oembedcore_provider'] = array(
+    'youtube' => FALSE,
+    'vimeo' => FALSE,
+    'flickr' => FALSE,
+    'qik' => FALSE,
+    'revision3' => FALSE,
+    'twitter' => FALSE,
+  );
+
+  foreach ($variables as $k => $v) {
+    variable_set($k, $v);
+  }
+
 }
 
 function _profile_setup_vars() {

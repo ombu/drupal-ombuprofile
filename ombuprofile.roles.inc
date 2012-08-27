@@ -6,11 +6,15 @@
     0 => 'access content',
     1 => 'search content',
     2 => 'use text format comment',
+    3 => 'view media',
   ),
   'authenticated user' =>
   array (
     0 => 'access content',
     1 => 'use text format comment',
+    2 => 'add media from remote sources',
+    3 => 'import media',
+    4 => 'view media',
   ),
   'admin' =>
   array (
@@ -47,6 +51,7 @@
     36 => 'view post access counter',
     37 => 'view revisions',
     38 => 'view the administration theme',
+    39 => 'edit media',    
   ),
   'editor' =>
   array (
@@ -72,6 +77,7 @@
     27 => 'use text format default',
     28 => 'view revisions',
     29 => 'view the administration theme',
+    30 => 'edit media',
   ),
 );
 
