@@ -75,6 +75,7 @@
           'numlist' => 1,
           'link' => 1,
           'unlink' => 1,
+          'blockquote' => 1,
           'removeformat' => 1,
         ),
         'font' => 
@@ -107,8 +108,10 @@
       'paste_auto_cleanup_on_paste' => 1,
       'block_formats' => 'p,h2,h3,h4',
       'css_setting' => 'self',
-      'css_path' => '',
-      'css_classes' => '',
+      'css_path' => 'profiles/ombuprofile/ombuprofile.wysiwyg.css',
+      'css_classes' => 'Lead=lead
+Pull Left=pull-left
+Pull Right=pull-right',
     ),
     'rdf_mapping' => 
     array (
