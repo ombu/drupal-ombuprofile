@@ -25,7 +25,6 @@
     5 => 'access statistics',
     6 => 'access the dashboard page',
     7 => 'access user profiles',
-    8 => 'administer blocks',
     9 => 'administer menu',
     10 => 'administer nodes',
     11 => 'administer site configuration',
