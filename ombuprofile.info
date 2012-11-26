@@ -35,6 +35,8 @@ dependencies[] = media
 dependencies[] = oembedcore
 dependencies[] = media_internet
 dependencies[] = media_oembed
+dependencies[] = jquery_update
+dependencies[] = redirect
 
 ; Custom dependencies
 dependencies[] = ombucleanup
