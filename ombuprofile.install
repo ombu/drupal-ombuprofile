@@ -1,8 +1,40 @@
 <?php
-// $Id$
 
 /**
- * Implements hook_install().
+ * @file
+ * Install functions for ombuprofile
  */
-function ombuprofile_install() {
+
+/**
+ * Implements hook_install_tasks().
+ */
+function ombuprofile_install_tasks() {
+  return array(
+    'setup_site' => array(
+      'display_name' => st('Install Site'),
+      'function' => 'ombuprofile_install_task_router',
+    ),
+  );
+}
+
+/**
+ * Routes tasks to baseprofile.
+ *
+ * @param array $install_state
+ *   An array of information about the current installation state.
+ */
+function ombuprofile_install_task_router($install_state) {
+  baseprofile_load_profile_includes();
+
+  // Add or remove tasks if necessary.
+  $tasks = baseprofile_site_install_tasks();
+
+  foreach ($tasks as $task => $info) {
+    if (!baseprofile_install_task_router($task, $info, $install_state)) {
+      if (function_exists('drush_log')) {
+        drush_log('Error installing site', 'error');
+        return FALSE;
+      }
+    }
+  }
 }
