@@ -26,15 +26,11 @@ function ombuprofile_install_tasks() {
 function ombuprofile_install_task_router($install_state) {
   baseprofile_load_profile_includes();
 
-  // Add or remove tasks if necessary.
-  $tasks = baseprofile_site_install_tasks();
+  $installer = new BaseProfile\Installer\Installer($install_state);
 
-  foreach ($tasks as $task => $info) {
-    if (!baseprofile_install_task_router($task, $info, $install_state)) {
-      if (function_exists('drush_log')) {
-        drush_log('Error installing site', 'error');
-        return FALSE;
-      }
-    }
-  }
+  // Add/remove tasks using:
+  // $installer->addTask('TaskName', 'Task Name');
+  // $installer->removeTask('TaskName');
+
+  $installer->processTasks();
 }
