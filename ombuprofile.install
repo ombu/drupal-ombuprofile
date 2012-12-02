@@ -24,13 +24,7 @@ function ombuprofile_install_tasks() {
  *   An array of information about the current installation state.
  */
 function ombuprofile_install_task_router($install_state) {
-  baseprofile_load_profile_includes();
-
+  $loader = baseprofile_autoload();
   $installer = new BaseProfile\Installer\Installer($install_state);
-
-  // Add/remove tasks using:
-  // $installer->addTask('TaskName', 'Task Name');
-  // $installer->removeTask('TaskName');
-
   $installer->processTasks();
 }
