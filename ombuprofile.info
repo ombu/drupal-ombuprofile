@@ -3,6 +3,6 @@ description = OmbuProfile installation profile.
 version = VERSION
 core = 7.x
 
-dependencies[] = baseprofile
+dependencies[] = ombucore
 
 files[] = ombuprofile.profile
