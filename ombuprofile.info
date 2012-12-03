@@ -1,5 +1,3 @@
-; $Id$
-
 name = OmbuProfile
 description = OmbuProfile installation profile.
 version = VERSION
